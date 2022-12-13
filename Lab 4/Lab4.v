@@ -1,0 +1,41 @@
+module s2f0(s2f0, a0, b1, b0);
+	input a0, b1, b0;
+	output s2f0;
+	assign s2f0 = (a0 & b1 & b0);
+	
+endmodule
+
+module s2f1(s2f1, a0, b1, b0);
+	input a0, b1, b0;
+	output s2f1;
+	assign s2f1 = b1 | (a0 & b0);
+
+endmodule
+
+module s1f0(s1f0, a0, b1, b0);
+	input a0, b1, b0;
+	output s1f0;
+	assign s1f0 = (~a0 & b1) | (b1 & ~b0) | (a0 & ~b1 & b0);
+
+endmodule
+
+module s1f1(s1f1, a0, b1, b0);
+	input a0, b0, b1;
+	output s1f1;
+	assign s1f1 = (~a0 & ~b1) | (~b1 & ~b0) | (a0 & b1 & b0);
+	
+endmodule
+
+module s0(s0, a0, b1, b0);
+	input a0, b1, b0;
+	output s0;
+	assign s0 = a0 ^ b0;
+
+endmodule
+
+module mux(s, a1, f1, f0);
+	input a1, f1, f0;
+	output s;
+	assign s = (a1 & f1) | (~a1 & f0);
+	
+endmodule

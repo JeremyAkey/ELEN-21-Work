@@ -1,0 +1,100 @@
+|Lab4
+HEX0[0] <= bin_7seg:inst8.seg[0]
+HEX0[1] <= bin_7seg:inst8.seg[1]
+HEX0[2] <= bin_7seg:inst8.seg[2]
+HEX0[3] <= bin_7seg:inst8.seg[3]
+HEX0[4] <= bin_7seg:inst8.seg[4]
+HEX0[5] <= bin_7seg:inst8.seg[5]
+HEX0[6] <= bin_7seg:inst8.seg[6]
+SW[0] => s1f1:inst5.b0
+SW[0] => s1f0:inst4.b0
+SW[0] => s0:inst3.b0
+SW[0] => s2f1:inst7.b0
+SW[0] => s2f0:inst.b0
+SW[1] => s1f1:inst5.b1
+SW[1] => s1f0:inst4.b1
+SW[1] => s0:inst3.b1
+SW[1] => s2f1:inst7.b1
+SW[1] => s2f0:inst.b1
+SW[2] => s1f1:inst5.a0
+SW[2] => s1f0:inst4.a0
+SW[2] => s0:inst3.a0
+SW[2] => s2f1:inst7.a0
+SW[2] => s2f0:inst.a0
+SW[3] => mux:inst1.a1
+SW[3] => mux:inst2.a1
+
+
+|Lab4|bin_7seg:inst8
+bi_digit[0] => Decoder0.IN3
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab4|mux:inst1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+a1 => s.IN0
+a1 => s.IN0
+f1 => s.IN1
+f0 => s.IN1
+
+
+|Lab4|s1f1:inst5
+s1f1 <= s1f1.DB_MAX_OUTPUT_PORT_TYPE
+a0 => s1f1.IN0
+a0 => s1f1.IN0
+b1 => s1f1.IN1
+b1 => s1f1.IN0
+b1 => s1f1.IN1
+b0 => s1f1.IN1
+b0 => s1f1.IN1
+
+
+|Lab4|s1f0:inst4
+s1f0 <= s1f0.DB_MAX_OUTPUT_PORT_TYPE
+a0 => s1f0.IN0
+a0 => s1f0.IN0
+b1 => s1f0.IN1
+b1 => s1f0.IN0
+b1 => s1f0.IN1
+b0 => s1f0.IN1
+b0 => s1f0.IN1
+
+
+|Lab4|s0:inst3
+s0 <= s0.DB_MAX_OUTPUT_PORT_TYPE
+a0 => s0.IN0
+b1 => ~NO_FANOUT~
+b0 => s0.IN1
+
+
+|Lab4|mux:inst2
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+a1 => s.IN0
+a1 => s.IN0
+f1 => s.IN1
+f0 => s.IN1
+
+
+|Lab4|s2f1:inst7
+s2f1 <= s2f1.DB_MAX_OUTPUT_PORT_TYPE
+a0 => s2f1.IN0
+b1 => s2f1.IN1
+b0 => s2f1.IN1
+
+
+|Lab4|s2f0:inst
+s2f0 <= s2f0.DB_MAX_OUTPUT_PORT_TYPE
+a0 => s2f0.IN0
+b1 => s2f0.IN1
+b0 => s2f0.IN1
+
+
