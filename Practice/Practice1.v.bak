@@ -1,0 +1,12 @@
+module JKflip(J, K, Out, In);
+input J, K;
+input Inl
+output reg Out;
+
+case({J,K})
+2'b00: Out = In;
+2'b01: Out = 0;
+2'b10: Out = 1;
+2'b11: Out = ~In;
+endcase
+endmodule
